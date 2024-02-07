@@ -25,7 +25,7 @@ struct SolarSystemApp: App {
                 .environment(appViewModel)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 0.8, height: 0.3, depth: 0.8, in: .meters)
+        .defaultSize(width: 0.8, height: 0.3, depth: 0.3, in: .meters)
         
         ImmersiveSpace(id: "ImmersiveSpace") {
             ImmersiveView()

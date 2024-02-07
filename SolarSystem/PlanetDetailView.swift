@@ -18,39 +18,28 @@ struct PlanetDetailView: View {
     
     @State var obj : SolarSystemModel = SolarSystemModel(entityName: "Sun", planetName: "FSDDFDS", planetSubHeading: "DSFSDFSD", planetDesc: "FSDFDFFDS")
     @State var deg = 0
-
+    
     let timer = Timer.publish(every: 0.04, on: .main, in: .common).autoconnect()
-
+    
     
     var body: some View {
         HStack(spacing: 60) {
-            ScrollView(.vertical) {
-                VStack(alignment: .leading,spacing: 20) {
-                    Text(obj.planetSubHeading)
-                        .font(.extraLargeTitle2)
-                    Text(obj.planetDesc)
-                        .font(.body)
-                    HStack {
-                        Button {
-                            openWindow(id: "planet")
-                            appViewModel.presentCurrentPlanet = obj.entityName
-                        } label: {
-                            Text("Add planet in your room")
-                                .multilineTextAlignment(.center)
-                        }
-                        .glassBackgroundEffect()
-    //                    Button {
-    //                        appViewModel.presentCurrentPlanet = obj.entityName
-    //                        appViewModel.inImmersiveView = true
-    //                        Task {
-    //                            await openImmersiveSpace(id: "ImmersiveSpace")
-    //                        }
-    //                    } label: {
-    //                        Text("See it in Full Immersive View?")
-    //                            .multilineTextAlignment(.center)
-    //                    }
-    //                    .glassBackgroundEffect()
+            VStack(alignment: .leading,spacing: 20) {
+                Text(obj.planetSubHeading)
+                    .font(.system(size: 55))
+                    .fontWeight(.bold)
+                Text(obj.planetDesc)
+                    .font(.system(size: 30))
+                    .fontWeight(.regular)
+                HStack {
+                    Button {
+                        openWindow(id: "planet")
+                        appViewModel.presentCurrentPlanet = obj.entityName
+                    } label: {
+                        Text("Add planet in your room")
+                            .multilineTextAlignment(.center)
                     }
+                    .glassBackgroundEffect()
                 }
             }
             .padding()
