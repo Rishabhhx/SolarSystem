@@ -8,36 +8,6 @@
 def Xform "Root"
 {
     reorder nameChildren = ["Sphere_Left", "Sphere_Right", "GridMaterial"]
-    def Sphere "Sphere_Right" (
-        active = true
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/GridMaterial/GridMaterial> (
-            bindMaterialAs = "weakerThanDescendants"
-        )
-        double radius = 0.1
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (0.5, 1.5, -1.5)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-    }
-
-    def Sphere "Sphere_Left" (
-        active = true
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/GridMaterial/GridMaterial> (
-            bindMaterialAs = "weakerThanDescendants"
-        )
-        double radius = 0.1
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (-0.5, 1.5, -1.5)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-    }
-
     def "GridMaterial" (
         active = true
         prepend references = @Materials/GridMaterial.usda@
@@ -52,7 +22,88 @@ def Xform "Root"
         prepend references = @Sun.usdz@
     )
     {
-        float3 xformOp:scale = (0.2, 0.2, 0.2)
+        float3 xformOp:scale = (6, 6, 6)
+        float3 xformOp:translate = (0.042545743, 1.2, -2.6274843)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Mercury" (
+        active = true
+        prepend references = @Mercury.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.3, 0.3, 0.3)
+        float3 xformOp:translate = (-0.8507555, 1.1999999, -2.2570684)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Venus" (
+        active = true
+        prepend references = @Venus.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (1.1100415, 1.2, -2.3560905)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Earth" (
+        active = true
+        prepend references = @Earth.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0.12679696, 1.2, -1.4836823)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Mars" (
+        active = true
+        prepend references = @Mars.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-0.78979963, 1.1999998, -3.663401)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Jupiter" (
+        active = true
+        prepend references = @Jupiter.usdz@
+    )
+    {
+        float3 xformOp:scale = (2, 2, 2)
+        float3 xformOp:translate = (-0.90946615, 1.2, -1.0407388)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Saturn" (
+        active = true
+        prepend references = @Saturn.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (1.0467815, 1.2000003, -3.7426987)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Uranus" (
+        active = true
+        prepend references = @Uranus.usdz@
+    )
+    {
+        float3 xformOp:scale = (1.2, 1.2, 1.2)
+        float3 xformOp:translate = (-2.031525, 1.2000003, -2.8536942)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Neptune" (
+        active = true
+        prepend references = @Neptune.usdz@
+    )
+    {
+        float3 xformOp:scale = (1.2, 1.2, 1.2)
+        float3 xformOp:translate = (1.6074765, 1.2, -0.9998418)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 }

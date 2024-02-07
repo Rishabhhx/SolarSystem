@@ -10,18 +10,50 @@ import RealityKit
 import RealityKitContent
 
 struct PlanetDetailView: View {
+    
+    @Environment(AppViewModel.self) private var appViewModel
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
+    
     @State var obj : SolarSystemModel = SolarSystemModel(entityName: "Sun", planetName: "FSDDFDS", planetSubHeading: "DSFSDFSD", planetDesc: "FSDFDFFDS")
-    let timer = Timer.publish(every: 0.04, on: .main, in: .common).autoconnect()
     @State var deg = 0
+
+    let timer = Timer.publish(every: 0.04, on: .main, in: .common).autoconnect()
+
     
     var body: some View {
         HStack(spacing: 60) {
-            VStack(alignment: .leading,spacing: 20) {
-                Text(obj.planetSubHeading)
-                    .font(.extraLargeTitle2)
-                Text(obj.planetDesc)
-                    .font(.body)
+            ScrollView(.vertical) {
+                VStack(alignment: .leading,spacing: 20) {
+                    Text(obj.planetSubHeading)
+                        .font(.extraLargeTitle2)
+                    Text(obj.planetDesc)
+                        .font(.body)
+                    HStack {
+                        Button {
+                            openWindow(id: "planet")
+                            appViewModel.presentCurrentPlanet = obj.entityName
+                        } label: {
+                            Text("Add planet in your room")
+                                .multilineTextAlignment(.center)
+                        }
+                        .glassBackgroundEffect()
+    //                    Button {
+    //                        appViewModel.presentCurrentPlanet = obj.entityName
+    //                        appViewModel.inImmersiveView = true
+    //                        Task {
+    //                            await openImmersiveSpace(id: "ImmersiveSpace")
+    //                        }
+    //                    } label: {
+    //                        Text("See it in Full Immersive View?")
+    //                            .multilineTextAlignment(.center)
+    //                    }
+    //                    .glassBackgroundEffect()
+                    }
+                }
             }
+            .padding()
             RealityView { content in
                 guard let entity = try? await Entity(named: obj.entityName, in: realityKitContentBundle) else {
                     return
@@ -43,4 +75,5 @@ struct PlanetDetailView: View {
 
 #Preview {
     PlanetDetailView()
+        .environment(AppViewModel())
 }

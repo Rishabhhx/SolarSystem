@@ -10,30 +10,42 @@ import RealityKit
 import RealityKitContent
 
 struct HomeView: View {
+    @Environment(AppViewModel.self) private var appViewModel
+
     let columns : [GridItem] = [GridItem(.adaptive(minimum: 250),spacing: 30)]
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                ScrollView {
-                    LazyVGrid(columns: columns,spacing: 30) {
-                        ForEach(solarSystemObj, id: \.self) { item in
-                            EntityView(obj: item)
+        ZStack {
+            ImmersiveControlsView()
+                .environment(appViewModel)
+                .opacity(appViewModel.inImmersiveView ? 1 : 0)
+            NavigationStack {
+                VStack {
+                    ScrollView {
+                        LazyVGrid(columns: columns,spacing: 30) {
+                            ForEach(solarSystemObj, id: \.self) { item in
+                                EntityView(obj: item)
+                                    .environment(appViewModel)
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
+                .navigationTitle("Welcome to Our Solar System")
             }
-            .navigationTitle("Welcome to Our Solar System")
+            .opacity(appViewModel.inImmersiveView ? 0 : 1)
         }
     }
 }
 
 #Preview(windowStyle: .automatic) {
     HomeView()
+        .environment(AppViewModel())
 }
 
 struct EntityView: View {
-    
+    @Environment(AppViewModel.self) private var appViewModel
+
     var obj: SolarSystemModel = SolarSystemModel(entityName: "", planetName: "", planetSubHeading: "", planetDesc: "")
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     @State var deg = 0
@@ -63,6 +75,7 @@ struct EntityView: View {
         .glassBackgroundEffect()
         .navigationDestination(isPresented: $moveToDetail) {
             PlanetDetailView(obj: obj)
+                .environment(appViewModel)
         }
         .onTapGesture {
             moveToDetail.toggle()

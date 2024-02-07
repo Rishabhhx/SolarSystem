@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A1D412B7366FB000482F4 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A1D402B7366FB000482F4 /* Planet.swift */; };
+		181A1D432B736BF3000482F4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A1D422B736BF3000482F4 /* AppViewModel.swift */; };
+		181A1D452B7376BC000482F4 /* ImmersiveControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A1D442B7376BC000482F4 /* ImmersiveControlsView.swift */; };
+		181A1D472B738B89000482F4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A1D462B738B89000482F4 /* MainView.swift */; };
+		181A1D492B738D66000482F4 /* SolarSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A1D482B738D66000482F4 /* SolarSystemView.swift */; };
 		1838CF702B6F77680094FC0F /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1838CF6F2B6F77680094FC0F /* RealityKitContent */; };
 		1838CF722B6F77680094FC0F /* SolarSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838CF712B6F77680094FC0F /* SolarSystemApp.swift */; };
 		1838CF742B6F77680094FC0F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838CF732B6F77680094FC0F /* HomeView.swift */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181A1D402B7366FB000482F4 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		181A1D422B736BF3000482F4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		181A1D442B7376BC000482F4 /* ImmersiveControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveControlsView.swift; sourceTree = "<group>"; };
+		181A1D462B738B89000482F4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		181A1D482B738D66000482F4 /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		1838CF6A2B6F77680094FC0F /* SolarSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolarSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1838CF6E2B6F77680094FC0F /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		1838CF712B6F77680094FC0F /* SolarSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemApp.swift; sourceTree = "<group>"; };
@@ -63,8 +73,13 @@
 			isa = PBXGroup;
 			children = (
 				1838CF712B6F77680094FC0F /* SolarSystemApp.swift */,
+				181A1D422B736BF3000482F4 /* AppViewModel.swift */,
 				1838CF732B6F77680094FC0F /* HomeView.swift */,
+				181A1D462B738B89000482F4 /* MainView.swift */,
+				181A1D482B738D66000482F4 /* SolarSystemView.swift */,
 				18E6EDBF2B70A82C00F9BBE1 /* PlanetDetailView.swift */,
+				181A1D442B7376BC000482F4 /* ImmersiveControlsView.swift */,
+				181A1D402B7366FB000482F4 /* Planet.swift */,
 				1886EB2D2B6FA1C3005B10CF /* HomeModel.swift */,
 				1838CF752B6F77680094FC0F /* ImmersiveView.swift */,
 				1838CF772B6F77690094FC0F /* Assets.xcassets */,
@@ -164,10 +179,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1886EB2E2B6FA1C3005B10CF /* HomeModel.swift in Sources */,
+				181A1D472B738B89000482F4 /* MainView.swift in Sources */,
 				1838CF742B6F77680094FC0F /* HomeView.swift in Sources */,
+				181A1D432B736BF3000482F4 /* AppViewModel.swift in Sources */,
 				1838CF722B6F77680094FC0F /* SolarSystemApp.swift in Sources */,
+				181A1D412B7366FB000482F4 /* Planet.swift in Sources */,
 				18E6EDC02B70A82C00F9BBE1 /* PlanetDetailView.swift in Sources */,
+				181A1D452B7376BC000482F4 /* ImmersiveControlsView.swift in Sources */,
 				1838CF762B6F77680094FC0F /* ImmersiveView.swift in Sources */,
+				181A1D492B738D66000482F4 /* SolarSystemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
