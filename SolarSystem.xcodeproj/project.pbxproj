@@ -73,15 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				1838CF712B6F77680094FC0F /* SolarSystemApp.swift */,
-				181A1D422B736BF3000482F4 /* AppViewModel.swift */,
-				1838CF732B6F77680094FC0F /* HomeView.swift */,
-				181A1D462B738B89000482F4 /* MainView.swift */,
-				181A1D482B738D66000482F4 /* SolarSystemView.swift */,
-				18E6EDBF2B70A82C00F9BBE1 /* PlanetDetailView.swift */,
-				181A1D442B7376BC000482F4 /* ImmersiveControlsView.swift */,
-				181A1D402B7366FB000482F4 /* Planet.swift */,
-				1886EB2D2B6FA1C3005B10CF /* HomeModel.swift */,
-				1838CF752B6F77680094FC0F /* ImmersiveView.swift */,
+				1869FCEE2B74FB2D00FBF427 /* Model */,
+				1869FCEF2B74FB4100FBF427 /* Views */,
+				1869FCF02B74FB4A00FBF427 /* Immersive Views */,
 				1838CF772B6F77690094FC0F /* Assets.xcassets */,
 				1838CF7C2B6F77690094FC0F /* Info.plist */,
 				1838CF792B6F77690094FC0F /* Preview Content */,
@@ -103,6 +97,36 @@
 				1838CF7A2B6F77690094FC0F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1869FCEE2B74FB2D00FBF427 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181A1D422B736BF3000482F4 /* AppViewModel.swift */,
+				1886EB2D2B6FA1C3005B10CF /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1869FCEF2B74FB4100FBF427 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1838CF732B6F77680094FC0F /* HomeView.swift */,
+				181A1D462B738B89000482F4 /* MainView.swift */,
+				181A1D482B738D66000482F4 /* SolarSystemView.swift */,
+				18E6EDBF2B70A82C00F9BBE1 /* PlanetDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1869FCF02B74FB4A00FBF427 /* Immersive Views */ = {
+			isa = PBXGroup;
+			children = (
+				181A1D442B7376BC000482F4 /* ImmersiveControlsView.swift */,
+				181A1D402B7366FB000482F4 /* Planet.swift */,
+				1838CF752B6F77680094FC0F /* ImmersiveView.swift */,
+			);
+			path = "Immersive Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
